@@ -38,7 +38,7 @@ const App = () => {
         <div className="HeroGroup">
           <h1>
             Learn to
-            <br /> code and design in React apps
+            <br /> code and design in modern React apps
           </h1>
           <p>Best tools and design systems for React</p>
           <a href="#!">Watch the video</a>
