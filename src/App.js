@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Card from "./components/Card";
 import Section from "./components/Section";
 import Wave from "./components/Wave";
@@ -113,6 +114,7 @@ const App = () => {
             <Cell image={cell.image} title={cell.title} />
           ))}
         </SectionCellGroup>
+        <Footer />
       </div>
     </Fragment>
   );

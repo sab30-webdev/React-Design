@@ -1,0 +1,45 @@
+.Footer {
+  background: #f1f3f5;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 25px;
+  padding: 50px 200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  .Footer {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 20px 40px;
+  }
+}
+
+.Footer h3 {
+  color: #94a4ba;
+}
+
+.Footer a:hover {
+  color: #19096b;
+}
+
+.Main {
+  display: grid;
+  grid-template-rows: 1fr;
+  gap: 10px;
+  text-align: center;
+}
+
+.Community {
+  display: grid;
+  grid-template-rows: 1fr;
+  gap: 10px;
+  text-align: center;
+}
+
+.Copyright {
+  text-align: center;
+  background: #f1f3f5;
+  padding: 25px 50px;
+  color: rgb(32, 82, 132);
+}

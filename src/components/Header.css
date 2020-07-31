@@ -20,12 +20,26 @@
   justify-items: center;
 }
 
-.HeaderGroup a {
+.HeaderGroup .header-link {
   color: white;
-  font-weight: 700;
+  padding: 9px 11px;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1.2);
 }
 
-.HeaderGroup button {
+.HeaderGroup .header-link:hover,
+.HeaderGroup .header-link:active {
+  color: black;
+  background: white;
+  border-radius: 12px;
+  border: none;
+  padding: 9px 11px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.25);
+  transform: translateY(-3px);
+}
+
+.HeaderGroup .buy-button {
   color: black;
   background: #56ccf2;
   border-radius: 20px;
@@ -38,7 +52,7 @@
   outline: none;
 }
 
-.HeaderGroup button:hover {
+.HeaderGroup .buy-button:hover {
   background: white;
   box-shadow: 0 20px 17px rgba(0, 0, 0, 0.25);
   transform: translateY(-3px) rotateY(360deg);
@@ -55,8 +69,8 @@
   }
 
   .HeaderGroup button {
-    font-size: 15px;
-    font-weight: 600px;
+    font-weight: 500;
+    font-size: 10px !important;
   }
 
   .HeaderGroup a:nth-child(4) {
