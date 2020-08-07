@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Card from "./components/Card";
@@ -32,48 +32,58 @@ const SectionCellGroup = styled.div`
 `;
 
 const App = () => {
+  const [dark, setDark] = useState(false);
+
+  const handleDark = () => {
+    dark === false ? setDark(true) : setDark(false);
+  };
+
   return (
     <Fragment>
-      <Header />
-      <div className="Hero">
-        <div className="HeroGroup">
-          <h1>
-            Learn to
-            <br /> code and design in modern React apps
-          </h1>
-          <p>Best tools and design systems for React</p>
-          <a href="#!">Watch the video</a>
-          <div className="HeroLogos">
-            <img
-              width="50"
-              src={require("./images/logo-figma.png")}
-              alt="logo-figma"
-            />
-            <img
-              width="50"
-              src={require("./images/logo-framer.png")}
-              alt="logo-framer"
-            />
-            <img
-              width="50"
-              src={require("./images/logo-invision.png")}
-              alt="logo-invision"
-            />
-            <img
-              width="50"
-              src={require("./images/logo-react.png")}
-              alt="logo-react"
-            />
-            <img
-              width="50"
-              src={require("./images/logo-sketch.png")}
-              alt="logo-sketch"
-            />
-            <img
-              width="50"
-              src={require("./images/logo-swift.png")}
-              alt="logo-swift"
-            />
+      <div className={!dark ? "Hero" : "Hero-Dark"}>
+        <Header toggleDark={handleDark} dark={dark} />
+        <div className="HeroGroupBackground">
+          <div className="HeroGroup">
+            <h1>
+              Learn to
+              <br /> code and design in modern React apps
+            </h1>
+            <p>Best tools and design systems for React</p>
+            <a href="#!" className="video-button">
+              Watch the video
+            </a>
+            <div className="HeroLogos">
+              <img
+                width="50"
+                src={require("./images/logo-figma.png")}
+                alt="logo-figma"
+              />
+              <img
+                width="50"
+                src={require("./images/logo-framer.png")}
+                alt="logo-framer"
+              />
+              <img
+                width="50"
+                src={require("./images/logo-invision.png")}
+                alt="logo-invision"
+              />
+              <img
+                width="50"
+                src={require("./images/logo-react.png")}
+                alt="logo-react"
+              />
+              <img
+                width="50"
+                src={require("./images/logo-sketch.png")}
+                alt="logo-sketch"
+              />
+              <img
+                width="50"
+                src={require("./images/logo-swift.png")}
+                alt="logo-swift"
+              />
+            </div>
           </div>
           <Wave />
         </div>
@@ -96,7 +106,7 @@ const App = () => {
               text="20 sections"
             />
             <Card
-              img={require("./images/wallpaper2.jpg")}
+              img={require("./images/wallpaper4.jpg")}
               title="React Native"
               text="19 sections"
             />
@@ -108,12 +118,14 @@ const App = () => {
           title="React for designers"
           text="Learn how to build a modern site using React and the most efficient libraries to get your site/product online. Get familiar with components, Grid CSS, animations, interactions, dynamic data with Contentful and deploying your site with Netlify."
         />
-        <SectionCaption>12 sections - 6 hours</SectionCaption>
-        <SectionCellGroup>
-          {staticdata.cells.map((cell) => (
-            <Cell image={cell.image} title={cell.title} />
-          ))}
-        </SectionCellGroup>
+        <div className="cells">
+          <SectionCaption>12 sections - 6 hours</SectionCaption>
+          <SectionCellGroup>
+            {staticdata.cells.map((cell, index) => (
+              <Cell key={index} image={cell.image} title={cell.title} />
+            ))}
+          </SectionCellGroup>
+        </div>
         <Footer />
       </div>
     </Fragment>

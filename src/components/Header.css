@@ -7,7 +7,7 @@
 }
 
 .HeaderScrolled {
-  background: rgba(0, 0, 0, 0.9);
+  background: rgb(11, 16, 34);
   padding: 15px 0;
 }
 
@@ -15,7 +15,7 @@
   max-width: 800px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(5, auto);
+  grid-template-columns: repeat(6, auto);
   align-items: center;
   justify-items: center;
 }
@@ -41,7 +41,7 @@
 
 .HeaderGroup .buy-button {
   color: black;
-  background: #56ccf2;
+  background: white;
   border-radius: 20px;
   border: none;
   font-size: 20px;
@@ -55,7 +55,18 @@
 .HeaderGroup .buy-button:hover {
   background: white;
   box-shadow: 0 20px 17px rgba(0, 0, 0, 0.25);
-  transform: translateY(-3px) rotateY(360deg);
+  transform: translateY(-3px);
+}
+
+.sun {
+  width: 30px;
+  cursor: pointer;
+}
+
+.moon {
+  color: #56ccf2;
+  width: 30px;
+  cursor: pointer;
 }
 
 @media (max-width: 650px) {
@@ -64,7 +75,7 @@
   }
 
   .HeaderGroup {
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(5, 1fr);
     font-size: 15px;
   }
 
